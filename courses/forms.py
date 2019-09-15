@@ -4,5 +4,5 @@ from django.forms.models import inlineformset_factory
 
 ModuleFormSet = inlineformset_factory(Course, Module,
                             fields=['title', 'description'],
-                            extra=2,
+                            extra=3,
                             can_delete=True)

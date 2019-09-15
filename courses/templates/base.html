@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id='header'>
-            <a href='/' class='logo'>Educa</a>
+            <a href='{% url "courses:course_list" %}' class='logo'>Educa</a>
             <ul class='menu'>
                 {% if request.user.is_authenticated %}
                     <li><a href='{% url "logout" %}'>Sign out</a></li>
@@ -24,7 +24,7 @@
         </div>
 
         <script src='{% static "js/jquery.js" %}'></script>
-        <script>
+        <script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jqueryui.min.js"></script
             $(document).ready(function() {
                 {% block domready %}
                 {% endblock %}

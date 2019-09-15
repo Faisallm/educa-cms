@@ -5,6 +5,9 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils import timezone
 from .fields import OrderField
 from django.utils.text import slugify
+from django.template.loader import render_to_string
+from	django.utils.safestring	import	mark_safe
+
 
 class Subject(models.Model):
     title = models.CharField(max_length=250)
@@ -26,6 +29,9 @@ class Course(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
+    # course.students.all()
+    # user.courses_joined.all()
 
     class Meta:
         ordering = ('-created',)  # recent courses at the top.
@@ -43,7 +49,7 @@ class Module(models.Model):
     # course.modules.all()
     title = models.CharField(max_length=250)
     description = models.TextField(blank=True)
-    order = OrderField(blank=True, for_fields=['course'])
+    order = OrderField(blank=True, for_fields=['course'])  # this will be automatically set for us.
 
     class Meta:
         ordering = ('order',)
@@ -82,6 +88,10 @@ class ItemBase(models.Model):
     
     def __str__(self):
         return self.title
+
+    def render(self):
+        return render_to_string('courses/content/{}.html'.format(self._meta.model_name),
+                                {'item':self})
 
 class Text(ItemBase):
     content = models.TextField()

@@ -38,5 +38,114 @@
     "title": "Science",
     "slug": "science"
   }
+},
+{
+  "model": "courses.course",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "subject": 1,
+    "title": "Structural Engineering",
+    "slug": "structural-engineering",
+    "overview": "The Design of skeletal structures for buildings to support load.",
+    "created": "2019-09-08T19:42:35.242Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "subject": 3,
+    "title": "Neural Networks",
+    "slug": "neural-networks",
+    "overview": "Computer Scientists are mimicking the design of the human brain neural pathways in an attempt to create an artificial intelligence solution to the problem of general intelligence. One algorithm to rule  them all. But I think what machine lack from human beings is conscious which is how we perceive our environment and change it, leading to more learning.",
+    "created": "2019-09-08T19:49:22.546Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 19,
+  "fields": {
+    "course": 3,
+    "title": "deep learning",
+    "description": "Deep down the rabbit hole.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 20,
+  "fields": {
+    "course": 3,
+    "title": "Convolutional neural network.",
+    "description": "A word created to make people think you are smart. It's just simply a word.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 21,
+  "fields": {
+    "course": 2,
+    "title": "Castigliano's Theorem",
+    "description": "It's a pain in the Ass!!",
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 3,
+  "fields": {
+    "module": 20,
+    "content_type": 10,
+    "object_id": 4,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 4,
+  "fields": {
+    "module": 20,
+    "content_type": 12,
+    "object_id": 1,
+    "order": 1
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "title": "NeuroScience",
+    "created": "2019-09-09T13:15:31.644Z",
+    "updated": "2019-09-09T13:15:31.644Z",
+    "content": "We just convert their research in algorithm."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 4,
+  "fields": {
+    "owner": 1,
+    "title": "NeuroScience",
+    "created": "2019-09-09T13:19:36.153Z",
+    "updated": "2019-09-11T11:21:03.556Z",
+    "content": "We just convert their research into algorithm."
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "title": "cat",
+    "created": "2019-09-09T13:20:13.740Z",
+    "updated": "2019-09-09T13:20:13.740Z",
+    "file": "images/cat.jpg"
+  }
 }
 ]
